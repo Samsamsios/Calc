@@ -1,0 +1,108 @@
+#include<iostream>
+#include<locale.h>
+using namespace std;
+ 
+template<typename T>
+auto sl () -> decltype (a+b)
+{
+    T a,b;
+    cout<<"Введите а:";
+    cin>>a;
+    cout<<"Введите b:";
+    cin>>b;
+    cout<<endl;
+    auto c  = a+b;
+    cout<< c;
+    return c;
+}
+ 
+template<typename T>
+auto ym () -> decltype (a*b)
+{
+    T a,b;
+    cout<<"Введите а:";
+    cin>>a;
+    cout<<"Введите b:";
+    cin>>b;
+    cout<<endl;
+    auto c  = a*b;
+    cout<< c;
+    return c;
+}
+ 
+template<typename T>
+auto vi() -> decltype (a-b)
+{
+    T a,b;
+    cout<<"Введите а:";
+    cin>>a;
+    cout<<"Введите b:";
+    cin>>b;
+    cout<<endl;
+    auto c  = a-b;
+    cout<< c;
+    return c;
+}
+ 
+template<typename T>
+auto del() -> decltype (a/b)
+{
+    T a,b;
+    cout<<"Введите а:";
+    cin>>a;
+    cout<<"Введите b:";
+    cin>>b;
+    cout<<endl;
+    auto c  = a/b;
+    cout<< c;
+    return c;
+}
+ 
+template<typename T>
+auto ko() -> decltype (abs(a))
+{
+    T a;
+    cout<<"Введите а:";
+    cin>>a;
+    cout<<endl;
+    auto c  = abs(a);
+    cout<< c;
+    return c;
+}
+ 
+ 
+int Vibor()
+{
+    int Answer;
+    cout<<"1 - Сложение\n";
+    cout<<"2 - Умножнение\n";
+    cout<<"3 - Вычитание\n";
+    cout<<"4 - Деление\n";
+    cout<<"5 - Извлечение корня\n";
+    cout<<"Ваш выбор:";
+    cin>>Answer;
+    return Answer;
+}
+ 
+void calc()
+{
+    while(1)
+    {
+        switch(Vibor())
+        {
+        case 1: system("cls"); sl();break;
+        case 2: system("cls"); ym();break;
+        case 3: system("cls"); vi();break;
+        case 4: system("cls"); del();break;
+        case 5: system("cls"); ko();break;
+        default: system("cls");cout<<"Неверный выбор";calc();break;
+        }
+    }
+}
+ 
+int main()
+{
+    setlocale(LC_ALL,"rus");
+    calc();
+    return 0;
+}
